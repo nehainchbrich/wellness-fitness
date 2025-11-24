@@ -1,0 +1,38 @@
+.wrapper {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fefce8;
+    border-radius: 1rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  .generateBtn {
+    padding: 0.5rem 1rem;
+    background: #f59e0b;
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+  
+  .generateBtn:hover {
+    background: #d97706;
+  }
+  
+  .routineList {
+    margin-top: 1rem;
+    list-style-type: disc;
+    text-align: left;
+    padding-left: 1.5rem;
+    font-size: 0.95rem;
+    color: #78350f;
+  }
+  

@@ -1,0 +1,83 @@
+.section {
+    padding: 4rem 0;
+    background: linear-gradient(to right, #16a34a, #059669);
+  }
+  
+  @media (min-width: 768px) {
+    .section {
+      padding: 6rem 0;
+    }
+  }
+
+  /* Container */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  @media (min-width: 640px) {
+    .container {
+      padding: 0 1.5rem;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .container {
+      padding: 0 2rem;
+    }
+  }
+  
+  /* Title */
+  .title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1.5rem;
+  }
+  
+  @media (min-width: 768px) {
+    .title {
+      font-size: 2.25rem;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .title {
+      font-size: 3rem;
+    }
+  }
+  
+  /* Subtitle */
+  .subtitle {
+    font-size: 1.25rem;
+    color: #ecfdf5;
+    margin-bottom: 2rem;
+  }
+  
+  /* Button */
+  .ctaButton {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: white;
+    color: #059669;
+    border-radius: 9999px;
+    font-size: 1.125rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+  
+  .ctaButton:hover {
+    background: #f0fdf4;
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  }
+  
+  /* Centered Box */
+  .inner {
+    max-width: 48rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+  

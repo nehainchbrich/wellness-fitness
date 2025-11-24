@@ -1,0 +1,71 @@
+.wrapper {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #f0f9ff;
+    border-radius: 1rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .form label {
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  .form input {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+  }
+  
+  .buttonGroup {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+  
+  .calculateBtn {
+    padding: 0.5rem 1rem;
+    background: #3b82f6;
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+  
+  .calculateBtn:hover {
+    background: #2563eb;
+  }
+  
+  .resetBtn {
+    padding: 0.5rem 1rem;
+    background: #ef4444;
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+  
+  .resetBtn:hover {
+    background: #dc2626;
+  }
+  
+  .result {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #1e3a8a;
+  }
+  

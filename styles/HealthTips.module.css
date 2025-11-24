@@ -1,0 +1,307 @@
+.section {
+  padding: clamp(3.5rem, 8vw, 5.5rem) 0;
+  background: radial-gradient(circle at top right, rgba(16, 185, 129, 0.12), transparent 55%),
+    radial-gradient(circle at bottom left, rgba(59, 130, 246, 0.1), transparent 50%),
+    #f8fafc;
+}
+
+.dark .section {
+  background: radial-gradient(circle at top right, rgba(34, 197, 94, 0.18), transparent 55%),
+    radial-gradient(circle at bottom left, rgba(59, 130, 246, 0.18), transparent 45%),
+    #09090b;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.intro {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 3rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.35rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  background: rgba(16, 185, 129, 0.08);
+  color: #059669;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.65rem;
+}
+
+.dark .badge {
+  background: rgba(16, 185, 129, 0.18);
+  border-color: rgba(16, 185, 129, 0.5);
+  color: #34d399;
+}
+
+.heading {
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  margin: 1rem 0 1rem;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.heading span {
+  color: #059669;
+}
+
+.dark .heading {
+  color: #f8fafc;
+}
+
+.dark .heading span {
+  color: #34d399;
+}
+
+.description {
+  color: #475569;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.dark .description {
+  color: #cbd5f5;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.cardsColumn {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.tipCard {
+  padding: 1.75rem;
+  border-radius: 1.75rem;
+  background: white;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  box-shadow: 0 30px 45px rgba(15, 23, 42, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.dark .tipCard {
+  background: rgba(15, 23, 42, 0.9);
+  border-color: rgba(99, 102, 241, 0.2);
+}
+
+.cardMint {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(248, 250, 252, 0.95));
+}
+
+.cardAmber {
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.12), rgba(248, 250, 252, 0.95));
+}
+
+.cardViolet {
+  background: linear-gradient(135deg, rgba(129, 140, 248, 0.16), rgba(248, 250, 252, 0.95));
+}
+
+.dark .cardMint,
+.dark .cardAmber,
+.dark .cardViolet {
+  background: rgba(15, 23, 42, 0.9);
+}
+
+.cardHeader {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.cardIcon {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.7);
+  display: grid;
+  place-items: center;
+  font-size: 1.6rem;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.dark .cardIcon {
+  background: rgba(30, 41, 59, 0.8);
+}
+
+.cardHeader h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #0f172a;
+}
+
+.cardHeader p {
+  margin: 0.25rem 0 0;
+  font-size: 0.9rem;
+  color: #0f766e;
+  font-weight: 600;
+}
+
+.dark .cardHeader h3 {
+  color: #f1f5f9;
+}
+
+.dark .cardHeader p {
+  color: #34d399;
+}
+
+.cardList {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: #1f2937;
+  line-height: 1.7;
+  font-size: 0.98rem;
+}
+
+.cardList li + li {
+  margin-top: 0.45rem;
+}
+
+.dark .cardList {
+  color: #e2e8f0;
+}
+
+.pulseBar {
+  height: 4px;
+  border-radius: 999px;
+  margin-top: 1.5rem;
+  background: linear-gradient(90deg, rgba(16, 185, 129, 0.8), rgba(59, 130, 246, 0.8));
+  animation: pulseFlow 4s ease-in-out infinite;
+}
+
+@keyframes pulseFlow {
+  0% {
+    transform: scaleX(0.3);
+    transform-origin: left;
+  }
+  50% {
+    transform: scaleX(1);
+    transform-origin: center;
+  }
+  100% {
+    transform: scaleX(0.3);
+    transform-origin: right;
+  }
+}
+
+.guideColumn {
+  display: flex;
+  align-items: stretch;
+}
+
+.guidePanel {
+  width: 100%;
+  background: white;
+  border-radius: 2rem;
+  padding: 2rem;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  box-shadow: 0 30px 60px rgba(15, 23, 42, 0.08);
+}
+
+.dark .guidePanel {
+  background: rgba(15, 23, 42, 0.92);
+  border-color: rgba(59, 130, 246, 0.25);
+}
+
+.guidePanel h4 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #0f172a;
+}
+
+.guidePanel p {
+  margin: 0.75rem 0 1.5rem;
+  color: #475569;
+  line-height: 1.7;
+}
+
+.dark .guidePanel h4 {
+  color: #f8fafc;
+}
+
+.dark .guidePanel p {
+  color: #c7d2fe;
+}
+
+.goalsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+.goalCard {
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  border-radius: 1.5rem;
+  padding: 1rem;
+  background: rgba(248, 250, 252, 0.95);
+}
+
+.dark .goalCard {
+  border-color: rgba(59, 130, 246, 0.4);
+  background: rgba(15, 23, 42, 0.8);
+}
+
+.goalLabel {
+  display: block;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #64748b;
+}
+
+.goalCard strong {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 1.05rem;
+  color: #0f172a;
+}
+
+.dark .goalLabel {
+  color: #94a3b8;
+}
+
+.dark .goalCard strong {
+  color: #e2e8f0;
+}
+
+.tipBox {
+  margin-top: 1.75rem;
+  border-radius: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px dashed rgba(16, 185, 129, 0.4);
+}
+
+.tipLabel {
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: #0f766e;
+  margin-bottom: 0.35rem;
+}
+
+.dark .tipBox {
+  background: rgba(16, 185, 129, 0.18);
+  border-color: rgba(16, 185, 129, 0.45);
+}
+
+.dark .tipLabel {
+  color: #34d399;
+}
+

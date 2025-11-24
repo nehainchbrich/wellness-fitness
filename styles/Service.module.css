@@ -1,0 +1,114 @@
+.section {
+    padding: 4rem 0;
+    background: linear-gradient(to bottom right, #fafafa, #e8fbe8);
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 1.5rem;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .title {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #111;
+  }
+  
+  .subtitle {
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+  }
+  
+  @media (min-width: 768px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  .card {
+    position: relative;
+    background: white;
+    padding: 2rem;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+    overflow: hidden;
+    transition: 0.3s ease;
+  }
+  
+  .card:hover {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+  }
+  
+  .bgCircle {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    filter: blur(40px);
+    opacity: 0.25;
+    transition: 0.3s ease;
+  }
+  
+  .card:hover .bgCircle {
+    opacity: 0.4;
+  }
+  
+  .green {
+    background: linear-gradient(to bottom right, #4ade80, #059669);
+  }
+  
+  .teal {
+    background: linear-gradient(to bottom right, #34d399, #14b8a6);
+  }
+  
+  .cyan {
+    background: linear-gradient(to bottom right, #22d3ee, #06b6d4);
+  }
+  
+  .blue {
+    background: linear-gradient(to bottom right, #38bdf8, #3b82f6);
+  }
+  
+  .content {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .cardTitle {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #111;
+  }
+  
+  .cardDesc {
+    color: #555;
+    margin: 0.5rem 0 1.2rem;
+  }
+  
+  .link {
+    color: #059669;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  
+  .link:hover {
+    padding-left: 6px;
+  }
+  

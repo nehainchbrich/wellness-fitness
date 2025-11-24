@@ -1,0 +1,78 @@
+/* @import "tailwindcss";   */
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+html{
+  background-size: cover !important;
+  background: url('/images/yoga-back.png') no-repeat right center fixed !important;
+}
+.fixedImg{
+  background-size: cover !important;
+  position:fixed;
+  right:0;
+  z-index: 1;
+  width: 100%;
+  height: 100vh;
+  top:0;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.6s ease, filter 0.6s ease;
+  background: url('/images/yoga-back.png') no-repeat right center fixed !important;
+}
+
+.fixedImgDim{
+  opacity: 0.35;
+  filter: blur(2px);
+}
+
+body {
+  /* background-blend-mode: multiply; */
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: transparent !important;
+}
+
+a {
+  color: inherit;
+  -webkit-text-decoration: inherit;
+  -webkit-text-decoration: inherit;
+  text-decoration: inherit;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: transparent;
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* Mobile menu slide-in animation */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.menu-item-enter {
+  animation: slideInLeft 0.3s ease-out forwards;
+}
