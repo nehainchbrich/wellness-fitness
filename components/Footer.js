@@ -36,7 +36,7 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className="container">
-        
+
         {/* Row */}
         <div className="row">
 
@@ -44,7 +44,7 @@ export default function Footer() {
           <div className={`col-12 col-md-4 col-lg-4 ${styles.footerCol}`}>
             <h2 className={styles.logo}>Wellness<span>Life</span></h2>
             <p>
-              Your trusted partner for holistic wellness — guiding you toward 
+              Your trusted partner for holistic wellness — guiding you toward
               balance, healing, and inner peace with personalized programs.
             </p>
 
@@ -62,7 +62,7 @@ export default function Footer() {
             <ul>
               <li><Link href="/about">About Us</Link></li>
               <li><Link href="/services">Our Programs</Link></li>
-              <li><Link href="/blogs">Blogs</Link></li>
+              <li><Link href="/blog">Blogs</Link></li>
               <li><Link href="/contact">Contact</Link></li>
               <li><Link href="/faq">FAQs</Link></li>
             </ul>
@@ -86,7 +86,7 @@ export default function Footer() {
             <p><strong>Phone:</strong> +91 98765 43210</p>
             <p><strong>Email:</strong> info@wellnesslife.com</p>
 
-            <a 
+            <a
               href="https://maps.app.goo.gl/jZTzcy9tzYkfM3qq8"
               target="_blank"
               className={styles.mapBtn}
@@ -95,7 +95,7 @@ export default function Footer() {
             </a>
           </div>
 
-      
+
 
         </div>
 
@@ -106,6 +106,6 @@ export default function Footer() {
 
       </div>
     </footer>
-  
+
   );
 }

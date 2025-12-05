@@ -1,6 +1,7 @@
 // import "../../styles/globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import { Header } from "@/components";
+import Footer from "@/components";
+import Head from "next/head";
 
 export const metadata = {
   title: "Wellness Retreat",
@@ -10,7 +11,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-           <Head>
+      <Head>
         <title>Wellness - Your Journey to Better Health</title>
         <meta name="description" content="Discover personalized wellness programs designed to nurture your mind, body, and soul." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />

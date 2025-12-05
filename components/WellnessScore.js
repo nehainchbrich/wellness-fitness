@@ -88,10 +88,10 @@ export default function WellnessScore() {
   // Load history & journal
   useEffect(() => {
     const rawHistory = localStorage.getItem('wellness_history');
-    if (rawHistory) try { setHistory(JSON.parse(rawHistory)); } catch {}
+    if (rawHistory) try { setHistory(JSON.parse(rawHistory)); } catch { }
 
     const rawJournal = localStorage.getItem('journal');
-    if (rawJournal) try { setJournal(JSON.parse(rawJournal)); } catch {}
+    if (rawJournal) try { setJournal(JSON.parse(rawJournal)); } catch { }
 
     // Random tip
     const tips = [
@@ -103,7 +103,7 @@ export default function WellnessScore() {
     setSuggestedTip(tips[Math.floor(Math.random() * tips.length)]);
 
     // Show journal modal on page load
-    setShowJournalModal(true);
+    setShowJournalModal(false);
   }, []);
 
   function saveHistory(score) {
@@ -127,9 +127,9 @@ export default function WellnessScore() {
     });
     const categories = Object.entries(categoryMap).map(([name, arr]) => ({
       name,
-      percent: Math.round((arr.reduce((a,b)=>a+b,0)/(arr.length*5))*100)
+      percent: Math.round((arr.reduce((a, b) => a + b, 0) / (arr.length * 5)) * 100)
     }));
-    return { percent: Math.round((total/(QUESTIONS.length*5))*100), categories };
+    return { percent: Math.round((total / (QUESTIONS.length * 5)) * 100), categories };
   }
 
   function handleSubmit(e) {
@@ -162,16 +162,16 @@ export default function WellnessScore() {
   }
 
   function computeBodyWellnessIndex(answers) {
-    const ids = ['sleep','nutrition','movement','hydration'];
-    let sum=0; ids.forEach(id=>sum+=answers[id]??0);
-    return Math.round((sum/(ids.length*5))*100);
+    const ids = ['sleep', 'nutrition', 'movement', 'hydration'];
+    let sum = 0; ids.forEach(id => sum += answers[id] ?? 0);
+    return Math.round((sum / (ids.length * 5)) * 100);
   }
 
   function computeMoodStabilityIndex(answers) {
-    const mood = answers['mood']??0;
-    const energy = answers['energy']??0;
-    const stress = answers['stress']??0;
-    return Math.round(((mood+energy+(5-stress))/15)*100);
+    const mood = answers['mood'] ?? 0;
+    const energy = answers['energy'] ?? 0;
+    const stress = answers['stress'] ?? 0;
+    return Math.round(((mood + energy + (5 - stress)) / 15) * 100);
   }
 
   return (
@@ -188,14 +188,14 @@ export default function WellnessScore() {
 
       {/* Form */}
       <form onSubmit={handleSubmit} className={styles.formBlock}>
-        {QUESTIONS.map(q=>(
+        {QUESTIONS.map(q => (
           <div key={q.id} className={styles.questionRow}>
             <div className={styles.labelColumn}>
               <label className={styles.label}>{q.text}</label>
               <div className={styles.categoryLabel}>{q.category}</div>
             </div>
             <div className={styles.inputColumn}>
-              <input type="range" min="0" max="5" value={answers[q.id]} onChange={e=>handleChange(q.id,e.target.value)} className={styles.rangeInput} />
+              <input type="range" min="0" max="5" value={answers[q.id]} onChange={e => handleChange(q.id, e.target.value)} className={styles.rangeInput} />
               <div className={styles.rangeValue}>{answers[q.id]} / 5</div>
             </div>
           </div>
@@ -204,12 +204,12 @@ export default function WellnessScore() {
       </form>
 
       {result && (
-        <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} className={styles.scoreCard}>
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className={styles.scoreCard}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className={styles.chartBlock}>
               <ResponsiveContainer>
                 <PieChart>
-                  <Pie data={[{name:'score',value:result.percent},{name:'remain',value:100-result.percent}]} innerRadius={60} outerRadius={80} dataKey="value">
+                  <Pie data={[{ name: 'score', value: result.percent }, { name: 'remain', value: 100 - result.percent }]} innerRadius={60} outerRadius={80} dataKey="value">
                     <Cell fill="#10b981" />
                     <Cell fill="#e5e7eb" />
                   </Pie>
@@ -246,20 +246,20 @@ export default function WellnessScore() {
           <div className={styles.indexBlock}>
             <h3 className={styles.sectionTitle}>Personal Recommendations</h3>
             <ul className={styles.toolText}>
-              {getRecommendations(result.categories).map((r,i)=><li key={i}>{r}</li>)}
+              {getRecommendations(result.categories).map((r, i) => <li key={i}>{r}</li>)}
             </ul>
           </div>
         </motion.div>
       )}
 
-{showJournalModal && (
-  <div className={styles.journalModalOverlay}>
-    <div className={styles.journalModalContent}>
-      <span className={styles.modalCloseBtn} onClick={() => setShowJournalModal(false)}>×</span>
-      <Journal entries={journal} save={setJournal} />
-    </div>
-  </div>
-)}
+      {showJournalModal && (
+        <div className={styles.journalModalOverlay}>
+          <div className={styles.journalModalContent}>
+            <span className={styles.modalCloseBtn} onClick={() => setShowJournalModal(false)}>×</span>
+            <Journal entries={journal} save={setJournal} />
+          </div>
+        </div>
+      )}
     </div>
   );
 }

@@ -5,13 +5,18 @@ import {
   FeaturesSection,
   ServicesSection,
   HealthTipsSection,
-  CTASection,
+  LifestyleSection,
+  Gallery,
+  BeforeAfter,
+  FAQSection,
+  NewsletterSection,
+  WellnessScore,
+  BlogSection,
 } from '../components';
 import TestimonialsSlider from '../components/Testimonials';
-import WellnessScore from '../components/WellnessScore';
-import BMICalculator from '../components/BmiCalculator';
-import WaterIntake from '../components/WaterIntake';
-import MorningRoutine from '../components/MorningRoutine';
+// import BMICalculator from '../components/BmiCalculator';
+// import WaterIntake from '../components/WaterIntake';
+// import MorningRoutine from '../components/MorningRoutine';
 
 export default function Home() {
   return (
@@ -31,13 +36,14 @@ export default function Home() {
         <AboutSection />
         <FeaturesSection />
         <ServicesSection />
+        <WellnessScore />
         <HealthTipsSection />
-        <WellnessScore/>
-        <BMICalculator/>
-        <WaterIntake/>
-        <MorningRoutine/>
+        <Gallery />
+        <BeforeAfter />
         <TestimonialsSlider />
-        <CTASection />
+        <FAQSection />
+        <NewsletterSection />
+        <BlogSection />
       </div>
     </>
   );

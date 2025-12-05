@@ -1,0 +1,246 @@
+.section {
+    padding: 6rem 2rem;
+    background-color: #f8fafc;
+}
+
+.dark .section {
+    background-color: #0f172a;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.dark .title {
+    background: linear-gradient(135deg, #f1f5f9 0%, #cbd5e1 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #64748b;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Split Layout */
+.splitLayout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+    .splitLayout {
+        grid-template-columns: 400px 1fr;
+        gap: 3rem;
+        align-items: start;
+    }
+}
+
+/* List Side */
+.blogList {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.listItem {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.dark .listItem {
+    background: #1e293b;
+}
+
+.listItem:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.activeItem {
+    border-color: #3b82f6;
+    background: #eff6ff;
+}
+
+.dark .activeItem {
+    background: rgba(59, 130, 246, 0.1);
+    border-color: #3b82f6;
+}
+
+.listImage {
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.listImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.listContent {
+    flex: 1;
+}
+
+.listCategory {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #3b82f6;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+    display: block;
+}
+
+.listTitle {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1e293b;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.dark .listTitle {
+    color: #f1f5f9;
+}
+
+/* Detail Side */
+.featuredBlog {
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 2rem;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.dark .featuredBlog {
+    background: #1e293b;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.featuredImage {
+    width: 100%;
+    height: 400px;
+    position: relative;
+}
+
+.featuredImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.featuredContent {
+    padding: 3rem;
+}
+
+.featuredMeta {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+.dark .featuredMeta {
+    color: #94a3b8;
+}
+
+.featuredCategory {
+    background: #3b82f6;
+    color: white;
+    padding: 0.25rem 1rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.featuredTitle {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #1e293b;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.dark .featuredTitle {
+    color: #f1f5f9;
+}
+
+.featuredExcerpt {
+    font-size: 1.1rem;
+    color: #475569;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.dark .featuredExcerpt {
+    color: #cbd5e1;
+}
+
+.readMoreBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #1e293b;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.dark .readMoreBtn {
+    background: #3b82f6;
+}
+
+.readMoreBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}

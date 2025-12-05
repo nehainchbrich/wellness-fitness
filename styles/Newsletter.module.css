@@ -1,0 +1,63 @@
+.section {
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%);
+    color: white;
+    text-align: center;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.description {
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.form {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+@media (min-width: 640px) {
+    .form {
+        flex-direction: row;
+    }
+}
+
+.input {
+    flex: 1;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    font-size: 1rem;
+    color: #1f2937;
+}
+
+.input:focus {
+    outline: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.button {
+    padding: 1rem 2rem;
+    background-color: #1f2937;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.button:hover {
+    background-color: #111827;
+}

@@ -1,0 +1,459 @@
+.gallerySection {
+    position: relative;
+    padding: 6rem 2rem;
+    background: #fff3;
+    overflow: hidden;
+    min-height: 100vh;
+}
+
+/* Floating Background Blobs */
+.floatingBg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.blob1,
+.blob2,
+.blob3 {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.3;
+    animation: float 25s infinite ease-in-out;
+}
+
+.blob1 {
+    width: 600px;
+    height: 600px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    top: -10%;
+    left: -5%;
+    animation-delay: 0s;
+}
+
+.blob2 {
+    width: 500px;
+    height: 500px;
+    background: linear-gradient(135deg, #f093fb, #f5576c);
+    bottom: -10%;
+    right: -5%;
+    animation-delay: 8s;
+}
+
+.blob3 {
+    width: 450px;
+    height: 450px;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-delay: 16s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    33% {
+        transform: translate(50px, -50px) scale(1.1);
+    }
+
+    66% {
+        transform: translate(-30px, 30px) scale(0.9);
+    }
+}
+
+/* Container */
+.container {
+    position: relative;
+    z-index: 1;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 4rem;
+    animation: fadeInDown 0.8s ease-out;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.title {
+    font-size: 4rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #000000, #565454);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+    animation: gradientSlide 8s ease infinite;
+}
+
+@keyframes gradientSlide {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.subtitle {
+    font-size: 1.3rem;
+    color: #64748b;
+    font-weight: 400;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Slider Container */
+.sliderContainer {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 80px;
+}
+
+.sliderTrack {
+    overflow: hidden;
+    border-radius: 30px;
+    position: relative;
+}
+
+.sliderWrapper {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.slide {
+    min-width: 100%;
+    flex-shrink: 0;
+}
+
+/* Gallery Item */
+.galleryItem {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(30px);
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+}
+
+.galleryItem:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 60px rgba(102, 126, 234, 0.2);
+}
+
+/* Navigation Buttons */
+.navButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border: 2px solid rgba(102, 126, 234, 0.2);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.navButton:hover {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-color: #667eea;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
+}
+
+.navButton:hover .arrow {
+    color: white;
+    transform: scale(1.2);
+}
+
+.prevButton {
+    left: 0;
+}
+
+.nextButton {
+    right: 0;
+}
+
+.arrow {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #667eea;
+    transition: all 0.3s ease;
+}
+
+/* Dot Indicators */
+.dotContainer {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 3rem;
+    padding: 20px 0;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(102, 126, 234, 0.2);
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    padding: 0;
+}
+
+.dot:hover {
+    background: rgba(102, 126, 234, 0.5);
+    transform: scale(1.3);
+}
+
+.activeDot {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    width: 40px;
+    border-radius: 10px;
+    border-color: rgba(102, 126, 234, 0.3);
+}
+
+/* Item Image */
+.itemImage {
+    position: relative;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #f1f5f9;
+}
+
+.imageOverlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, transparent 0%, rgba(0, 0, 0, 0.15) 100%);
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.galleryItem:hover .imageOverlay {
+    opacity: 0.5;
+}
+
+/* Hover Effect */
+.hoverEffect {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 3;
+}
+
+.galleryItem:hover .hoverEffect {
+    opacity: 1;
+}
+
+.viewIcon {
+    font-size: 3rem;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: scale(1.15);
+        opacity: 1;
+    }
+}
+
+/* Item Content */
+.itemContent {
+    padding: 2.5rem;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.95));
+}
+
+.itemTitle {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+}
+
+.galleryItem:hover .itemTitle {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.itemDescription {
+    font-size: 1.15rem;
+    color: #64748b;
+    line-height: 1.7;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .sliderContainer {
+        padding: 0 60px;
+    }
+
+    .navButton {
+        width: 50px;
+        height: 50px;
+    }
+
+    .arrow {
+        font-size: 1.5rem;
+    }
+
+    .itemImage {
+        height: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallerySection {
+        padding: 4rem 1.5rem;
+    }
+
+    .title {
+        font-size: 3rem;
+    }
+
+    .subtitle {
+        font-size: 1.1rem;
+    }
+
+    .sliderContainer {
+        padding: 0 50px;
+    }
+
+    .navButton {
+        width: 45px;
+        height: 45px;
+    }
+
+    .arrow {
+        font-size: 1.3rem;
+    }
+
+    .itemImage {
+        height: 300px;
+    }
+
+    .itemContent {
+        padding: 2rem;
+    }
+
+    .itemTitle {
+        font-size: 1.6rem;
+    }
+
+    .itemDescription {
+        font-size: 1.05rem;
+    }
+
+    .blob1,
+    .blob2,
+    .blob3 {
+        width: 350px;
+        height: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .sliderContainer {
+        padding: 0 40px;
+    }
+
+    .navButton {
+        width: 40px;
+        height: 40px;
+    }
+
+    .arrow {
+        font-size: 1.1rem;
+    }
+
+    .itemImage {
+        height: 250px;
+    }
+
+    .itemContent {
+        padding: 1.5rem;
+    }
+
+    .itemTitle {
+        font-size: 1.4rem;
+    }
+
+    .itemDescription {
+        font-size: 1rem;
+    }
+
+    .dotContainer {
+        gap: 8px;
+        margin-top: 2rem;
+    }
+
+    .dot {
+        width: 10px;
+        height: 10px;
+    }
+
+    .activeDot {
+        width: 30px;
+    }
+}

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import styles from '../styles/Header.module.css';
 
-export default function Header() {
+export default function Header({ transparent = false }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -19,17 +19,28 @@ export default function Header() {
     { name: 'Home', href: '/' },
     { name: 'Body', href: '/' },
     { name: 'Mind', href: '/' },
-    { name: 'Lifestyle', href: '/' },
-    { name: 'Nutrition', href: '/' },
-    { name: 'Self-Care', href: '/' },
+    { name: 'Lifestyle', href: '/lifestyle' },
+    { name: 'Nutrition', href: '/nutrition' },
+    { name: 'Self-Care', href: '/self-care' },
+    { name: 'Blog', href: '/blog' },
     { name: 'Community', href: '/' },
-    { name: 'Login', href: '/' },
+    { name: 'Our Legacy', href: '/founder' },
   ];
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = isMobileMenuOpen ? 'hidden' : 'unset';
   }, [isMobileMenuOpen]);
+
+  // Determine header class
+  const headerClass = isScrolled
+    ? styles.headerScrolled
+    : transparent
+      ? styles.headerTransparent
+      : styles.headerDefault;
+
+  // Determine nav item class
+  const navItemClass = (transparent && !isScrolled) ? styles.navItemDark : styles.navItem;
 
   return (
     <>
@@ -41,10 +52,7 @@ export default function Header() {
       />
 
       {/* HEADER */}
-      <header
-        className={`${styles.header} ${isScrolled ? styles.headerScrolled : styles.headerDefault
-          }`}
-      >
+      <header className={`${styles.header} ${headerClass}`}>
         <nav className={styles.navWrap}>
           <div className={styles.navFlex}>
 
@@ -62,7 +70,7 @@ export default function Header() {
             {/* DESKTOP NAV */}
             <div className={styles.desktopNav}>
               {navLinks.map((link) => (
-                <Link key={link.name} href={link.href} className={styles.navItem}>
+                <Link key={link.name} href={link.href} className={navItemClass}>
                   {link.name}
                   <span className={styles.navUnderline}></span>
                 </Link>
@@ -71,8 +79,8 @@ export default function Header() {
 
             {/* DESKTOP BUTTON */}
             <div className={styles.desktopBtnWrap}>
-              <Link href="/get-started" className={styles.btnPrimary}>
-                Get Started
+              <Link href="/auth/login" className={styles.btnPrimary}>
+                Login
               </Link>
             </div>
 
@@ -127,7 +135,7 @@ export default function Header() {
           ))}
 
           <Link
-            href="/get-started"
+            href="/auth/register"
             className={styles.sidebarBtn}
             style={{ animationDelay: `${navLinks.length * 50}ms` }}
             onClick={() => setIsMobileMenuOpen(false)}

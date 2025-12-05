@@ -14,12 +14,19 @@ const geistMono = Geist_Mono({
 });
 
 export default function App({ Component, pageProps }) {
+  // Pages that should have their own full layout control without template wrapper
+  const useOwnLayout = Component.useOwnLayout || false;
+
   return (
     <div className={`${geistSans.variable} ${geistMono.variable}`}>
-      <Header />
-      <main className="pt-16 md:pt-20 min-h-screen">
+      <Header transparent={useOwnLayout} />
+      {useOwnLayout ? (
         <Component {...pageProps} />
-      </main>
+      ) : (
+        <main className="pt-16 md:pt-20 min-h-screen">
+          <Component {...pageProps} />
+        </main>
+      )}
       <Footer />
     </div>
   );
