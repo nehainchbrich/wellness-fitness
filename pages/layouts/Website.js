@@ -1,7 +1,7 @@
 // app/layout.js (or layout.jsx)
 
-import "../styles/globals.css";
-import { Header, Footer } from "@/components";
+import "../../styles/globals.css";
+import { Header, Footer } from "../../components";
 
 export const metadata = {
   title: "Wellness - Your Journey to Better Health",
