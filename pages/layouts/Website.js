@@ -1,6 +1,6 @@
 // app/layout.js (or layout.jsx)
 
-import "../../styles/globals.css";
+
 import { Header, Footer } from "../../components";
 
 export const metadata = {
